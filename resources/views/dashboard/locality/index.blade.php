@@ -49,7 +49,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="7">No hay localidades registradas.</td>
+                    <td colspan="8">No hay localidades registradas.</td>
                 </tr>
             @endforelse
         </tbody>

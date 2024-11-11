@@ -19,38 +19,8 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/faculty')" :active="request()->routeIs('faculty.*')">
-                        {{ __('Facultades') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/identity')" :active="request()->routeIs('identity.*')">
-                        {{ __('Identidades') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/modality')" :active="request()->routeIs('modality.*')">
-                        {{ __('Modalidades') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('dashboard/agency')" :active="request()->routeIs('agency.*')">
                         {{ __('Agencias') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/locality')" :active="request()->routeIs('locality.*')">
-                        {{ __('Localidades') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/program')" :active="request()->routeIs('program.*')">
-                        {{ __('Programas') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('dashboard/convocation')" :active="request()->routeIs('convocation.*')">
-                        {{ __('Convocatorias') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
@@ -59,8 +29,78 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/convocation')" :active="request()->routeIs('convocation.*')">
+                        {{ __('Convocatorias') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="url('dashboard/student')" :active="request()->routeIs('student.*')">
                         {{ __('Estudiantes') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/study')" :active="request()->routeIs('study.*')">
+                        {{ __('Estudios') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/workExperience')" :active="request()->routeIs('workExperience.*')">
+                        {{ __('Experiencia Laborales') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/faculty')" :active="request()->routeIs('faculty.*')">
+                        {{ __('Facultades') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/complementaryStudy')" :active="request()->routeIs('complementaryStudy.*')">
+                        {{ __('Formaciones Complementarias') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/curriculum')" :active="request()->routeIs('curriculum.*')">
+                        {{ __('Hojas de vida') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/identity')" :active="request()->routeIs('identity.*')">
+                        {{ __('Identidades') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/languageLevel')" :active="request()->routeIs('languageLevel.*')">
+                        {{ __('Idiomas') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/locality')" :active="request()->routeIs('locality.*')">
+                        {{ __('Localidades') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/modality')" :active="request()->routeIs('modality.*')">
+                        {{ __('Modalidades') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/program')" :active="request()->routeIs('program.*')">
+                        {{ __('Programas') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/recognition')" :active="request()->routeIs('recognition.*')">
+                        {{ __('Reconocimientos') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/reference')" :active="request()->routeIs('reference.*')">
+                        {{ __('Referencias') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('dashboard/convocationRelation')" :active="request()->routeIs('convocationRelation.*')">
+                        {{ __('Relaciones') }}
                     </x-nav-link>
                 </div>
             </div>

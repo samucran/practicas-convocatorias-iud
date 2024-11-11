@@ -6,7 +6,9 @@
     </x-slot>
     <div class="container mt-5">
 
-    <a href="{{ route('file.create') }}" class="btn btn-primary mb-3">Crear Nuevo Archivo</a>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('file.create') }}" class="btn btn-primary">Crear Nuevo Archivo</a>
+    </div>
 
     <table class="table table-striped table-bordered">
         <thead>

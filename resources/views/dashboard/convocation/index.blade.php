@@ -4,7 +4,7 @@
             {{ __('Todas Las Convocatorias') }}
         </h2>
     </x-slot>
-    <div class="container">
+    <div class="container mt-5">
 
     @if(session('success'))
         <div class="alert alert-success">
@@ -16,8 +16,8 @@
         <a href="{{ route('convocation.create') }}" class="btn btn-primary">Agregar Nueva Convocation</a>
     </div>
 
-    <table class="table table-striped text-center">
-        <thead class="thead-light">
+    <table class="table table-bordered text-center">
+        <thead class="table-light">
             <tr>
                 <th>ID</th>
                 <th>Tiene Agencia</th>

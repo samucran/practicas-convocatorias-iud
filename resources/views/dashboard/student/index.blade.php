@@ -12,10 +12,12 @@
         </div>
     @endif
 
-    <a href="{{ route('student.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudiante</a>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('student.create') }}" class="btn btn-primary">Crear Nuevo Estudiante</a>
+    </div>
 
-    <table class="table table-striped table-bordered">
-        <thead>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
             <tr>
                 <th>ID</th>
                 <th>Primer Nombre</th>

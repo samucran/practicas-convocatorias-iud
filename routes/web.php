@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 
-//
+// llamado a los controladores
 use App\Http\Controllers\facultyController;
 use App\Http\Controllers\identityController;
 use App\Http\Controllers\modalityController;
@@ -12,6 +12,14 @@ use App\Http\Controllers\programController;
 use App\Http\Controllers\convocationController;
 use App\Http\Controllers\fileController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\convocationRelationController;
+use App\Http\Controllers\curriculumController;
+use App\Http\Controllers\recognitionController;
+use App\Http\Controllers\referenceController;
+use App\Http\Controllers\languageLevelController;
+use App\Http\Controllers\workExperienceController;
+use App\Http\Controllers\complementaryStudyController;
+use App\Http\Controllers\studyController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +45,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('/dashboard/convocation', convocationController::class);
     Route::resource('/dashboard/file', fileController::class);
     Route::resource('/dashboard/student', studentController::class);
+    Route::resource('/dashboard/convocationRelation', convocationRelationController::class);
+    Route::resource('/dashboard/curriculum', curriculumController::class);
+    Route::resource('/dashboard/recognition', recognitionController::class);
+    Route::resource('/dashboard/reference', referenceController::class);
+    Route::resource('/dashboard/languageLevel', languageLevelController::class);
+    Route::resource('/dashboard/workExperience', workExperienceController::class);
+    Route::resource('/dashboard/complementaryStudy', complementaryStudyController::class);
+    Route::resource('/dashboard/study', studyController::class);
 });
 
 require __DIR__.'/auth.php';

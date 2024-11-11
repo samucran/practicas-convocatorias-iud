@@ -4,7 +4,7 @@
             {{ __('Crear Convocatoria') }}
         </h2>
     </x-slot>
-    <div class="container">
+    <div class="container mt-5">
 
     @if($errors->any())
         <div class="alert alert-danger">
