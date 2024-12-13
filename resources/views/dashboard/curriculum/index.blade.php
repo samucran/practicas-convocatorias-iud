@@ -26,7 +26,7 @@
             @forelse ($curriculums as $curriculum)
                 <tr>
                     <td>{{ $curriculum->id }}</td>
-                    <td>{{ $curriculum->student_id }}</td>
+                    <td>{{ $curriculum->student->identity_number }}</td>
                     <td>{{ $curriculum->professional_profile ?? 'N/A' }}</td>
                     <td>
                         <a href="{{ route('curriculum.edit', $curriculum->id) }}" class="btn btn-warning btn-sm">Editar</a>

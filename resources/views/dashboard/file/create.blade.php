@@ -27,15 +27,6 @@
             @enderror
         </div>
 
-        <div class="form-group mb-3">
-            <label for="institutional_resume" class="form-label">Hoja de vida institucional</label>
-            <input type="file" class="form-control @error('institutional_resume') is-invalid @enderror" 
-                   id="institutional_resume" name="institutional_resume" accept="application/pdf" required>
-            @error('institutional_resume')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
         <button type="submit" class="btn btn-primary">Crear Archivo</button>
         <a href="{{ route('file.index') }}" class="btn btn-secondary">Volver</a>
     </form>

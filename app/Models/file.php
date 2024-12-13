@@ -14,6 +14,5 @@ class file extends Model
     protected $fillable = [
         'identity_document', 
         'health_certificate', 
-        'institutional_resume'
     ];
 }

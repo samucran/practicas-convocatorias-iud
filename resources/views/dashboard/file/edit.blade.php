@@ -42,22 +42,6 @@
             @enderror
         </div>
 
-        <div class="form-group mb-3">
-            <label for="institutional_resume" class="form-label">Hoja de vida institucional</label>
-            <input type="file" class="form-control @error('institutional_resume') is-invalid @enderror" 
-                   id="institutional_resume" name="institutional_resume" accept="application/pdf">
-            <small>Actual: 
-                @if ($file->institutional_resume)
-                    <a href="{{ Storage::url($file->institutional_resume) }}" target="_blank">Ver Hoja de Vida</a>
-                @else
-                    N/A
-                @endif
-            </small>
-            @error('institutional_resume')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
         <button type="submit" class="btn btn-warning">Actualizar Archivo</button>
         <a href="{{ route('file.index') }}" class="btn btn-secondary">Volver</a>
     </form>

@@ -24,14 +24,15 @@
                 <th>Segundo Nombre</th>
                 <th>Primer Apellido</th>
                 <th>Segundo Apellido</th>
-                <th>ID Identidad</th>
+                <th>Identidad</th>
                 <th>Numero Identidad</th>
                 <th>Correo Institucional</th>
                 <th>Correo Personal</th>
                 <th>Numero Celular</th>
-                <th>ID Localidad</th>
-                <th>ID Programa</th>
-                <th>ID Archivo</th>
+                <th>Localidad</th>
+                <th>Programa</th>
+                <th>Archivo</th>
+                <th>Calificacion</th>
                 <th>Estado</th>
                 <th>Acciones</th>
             </tr>
@@ -44,15 +45,16 @@
                     <td>{{ $student->second_name ?? 'N/A' }}</td>
                     <td>{{ $student->first_surname }}</td>
                     <td>{{ $student->second_surname ?? 'N/A' }}</td>
-                    <td>{{ $student->identity->id }}</td>
+                    <td>{{ $student->identity->identity_type }}</td>
                     <td>{{ $student->identity_number }}</td>
                     <td>{{ $student->institutional_email }}</td>
                     <td>{{ $student->personal_email }}</td>
                     <td>{{ $student->phone_number ?? 'N/A' }}</td>
                     <td>{{ $student->locality->id }}</td>
-                    <td>{{ $student->program->id }}</td>
+                    <td>{{ $student->program->program_name }}</td>
                     <td>{{ $student->file->id }}</td>
-                    <td>{{ $student->status ? 'Active' : 'Inactive' }}</td>
+                    <td>{{ $student->quialification }}</td>
+                    <td>{{ $student->status }}</td>
                     <td>
                         <a href="{{ route('student.edit', $student) }}" class="btn btn-sm btn-warning">Editar</a>
                         <form action="{{ route('student.destroy', $student) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Esta seguro que quiere eliminar este estudiante?');">

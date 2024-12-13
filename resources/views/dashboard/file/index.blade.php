@@ -16,7 +16,6 @@
                 <th>ID</th>
                 <th>Documento de Identidad</th>
                 <th>Certificado de Salud</th>
-                <th>Hoja de Vida Institucional</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -36,14 +35,6 @@
                     <td>
                         @if ($file->health_certificate)
                             <a href="{{ Storage::url($file->health_certificate) }}" target="_blank">Ver Certificado</a>
-                        @else
-                            N/A
-                        @endif
-                    </td>
-
-                    <td>
-                        @if ($file->institutional_resume)
-                            <a href="{{ Storage::url($file->institutional_resume) }}" target="_blank">Ver Hoja de Vida</a>
                         @else
                             N/A
                         @endif

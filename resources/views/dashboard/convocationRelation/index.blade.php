@@ -40,7 +40,7 @@
                 <tr>
                     <td>{{ $relation->id }}</td>
                     <td>{{ $relation->convocation->id }}</td>
-                    <td>{{ $relation->student->id }}</td>
+                    <td>{{ $relation->student->identity_number }}</td>
                     <td>{{ $relation->semester_date }}</td>
                     <td>{{ $relation->mandatory_practice ? 'Sí' : 'No' }}</td>
                     <td>

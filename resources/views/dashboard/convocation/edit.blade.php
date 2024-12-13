@@ -46,7 +46,7 @@
             <option value="">Seleccione una Agencia</option>
             @foreach($agencies as $agency)
                 <option value="{{ $agency->id }}">
-                    ID: {{ $agency->id }}
+                     {{ $agency->agency_name }}
                 </option>
             @endforeach
         </select>
@@ -58,7 +58,7 @@
             <option value="">Seleccione una Modalidad</option>
             @foreach($modalities as $modality)
                 <option value="{{ $modality->id }}">
-                    ID: {{ $modality->id }}
+                     {{ $modality->modality_name }}
                 </option>
             @endforeach
         </select>

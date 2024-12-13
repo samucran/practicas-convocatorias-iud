@@ -5,7 +5,10 @@
         </h2>
     </x-slot>
     <div class="container mt-5">
-    <a href="{{ route('study.create') }}" class="btn btn-primary mb-3">Crear Nuevo Estudio</a>
+        
+    <div class="d-flex justify-content-end mb-3">
+        <a href="{{ route('study.create') }}" class="btn btn-primary">Agregar Nueva Facultad</a>
+    </div>
 
     @if (session('success'))
         <div class="alert alert-success">

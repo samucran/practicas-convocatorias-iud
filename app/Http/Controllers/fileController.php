@@ -33,7 +33,6 @@ class fileController extends Controller
         $validatedData = $request->validate([
             'identity_document' => 'required|file|mimes:pdf|max:2048',
             'health_certificate' => 'required|file|mimes:pdf|max:2048',
-            'institutional_resume' => 'required|file|mimes:pdf|max:2048',
         ]);
 
         $file = new file();
@@ -41,7 +40,6 @@ class fileController extends Controller
         // Guardar los archivos y almacenar las rutas en la base de datos
         $file->identity_document = $request->file('identity_document')->store('files');
         $file->health_certificate = $request->file('health_certificate')->store('files');
-        $file->institutional_resume = $request->file('institutional_resume')->store('files');
 
         $file->save();
 
@@ -74,7 +72,6 @@ class fileController extends Controller
         $validatedData = $request->validate([
             'identity_document' => 'nullable|file|mimes:pdf|max:2048',
             'health_certificate' => 'nullable|file|mimes:pdf|max:2048',
-            'institutional_resume' => 'nullable|file|mimes:pdf|max:2048',
         ]);
 
         // Actualizar y guardar archivos si se suben nuevos
@@ -88,11 +85,6 @@ class fileController extends Controller
         if ($request->hasFile('health_certificate')) {
             Storage::delete($file->health_certificate);
             $file->health_certificate = $request->file('health_certificate')->store('files');
-        }
-
-        if ($request->hasFile('institutional_resume')) {
-            Storage::delete($file->institutional_resume);
-            $file->institutional_resume = $request->file('institutional_resume')->store('files');
         }
 
         $file->save();
@@ -111,7 +103,6 @@ class fileController extends Controller
         // Eliminar los archivos de almacenamiento
         Storage::delete($file->identity_document);
         Storage::delete($file->health_certificate);
-        Storage::delete($file->institutional_resume);
 
         $file->delete();
 

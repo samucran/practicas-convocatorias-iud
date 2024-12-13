@@ -14,7 +14,7 @@
             <select name="student_id" id="student_id" class="form-select" required>
                 <option value="">Seleccione un estudiante</option>
                 @foreach ($students as $student)
-                    <option value="{{ $student->id }}">{{ $student->id }}</option>
+                    <option value="{{ $student->id }}">{{ $student->identity_number }}</option>
                 @endforeach
             </select>
             @error('student_id')

@@ -22,10 +22,11 @@ return new class extends Migration
             $table->string('institutional_email')->unique();  // Correo institucional único y obligatorio
             $table->string('personal_email')->unique();  // Correo personal único y obligatorio
             $table->string('phone_number')->nullable();  // Número celular opcional
-            $table->unsignedBigInteger('locality_id')->unique();  // Llave foránea localidad (única y obligatoria)
+            $table->unsignedBigInteger('locality_id')->unique();  // Llave foránea localidad 
             $table->unsignedBigInteger('program_id');  // Llave foránea programa
-            $table->unsignedBigInteger('file_id')->unique();  // Llave foránea archivo (única y obligatoria)
-            $table->boolean('status');  // Estado obligatorio (ejemplo: activo/inactivo)
+            $table->unsignedBigInteger('file_id')->unique();  // Llave foránea archivo 
+            $table->string('quialification')->nullable();
+            $table->enum('status', ['Activo', 'Inactivo', 'Finalizó', 'En proceso', 'Se retiró', 'Reprobó']);  // Estado obligatorio 
             $table->timestamps();
 
              // Llaves foráneas con onDelete('cascade')

@@ -50,7 +50,8 @@ class studentController extends Controller
             'locality_id' => 'required|exists:localities,id|unique:students,id',
             'program_id' => 'required|exists:programs,id',
             'file_id' => 'required|exists:files,id|unique:students,id',
-            'status' => 'required|boolean',
+            'quialification' => 'nullable|string|max:5',
+            'status' => 'required|in:Activo,Inactivo,Finalizó,En proceso,Se retiró,Reprobó',
         ]);
 
         student::create($validatedData);
@@ -96,7 +97,8 @@ class studentController extends Controller
             'locality_id' => 'required|exists:localities,id|unique:students,id,' . $student->id,
             'program_id' => 'required|exists:programs,id',
             'file_id' => 'required|exists:files,id|unique:students,id,' . $student->id,
-            'status' => 'required|boolean',
+            'quialification' => 'nullable|string|max:5',
+            'status' => 'required|in:Activo,Inactivo,Finalizó,En proceso,Se retiró,Reprobó',
         ]);
 
         $student->update($validatedData);

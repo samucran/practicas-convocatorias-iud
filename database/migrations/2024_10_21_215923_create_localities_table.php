@@ -9,25 +9,27 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('localities', function (Blueprint $table) {
-            $table->id();
-            $table->string('country', 20);
-            $table->string('state', 20);
-            $table->string('city', 20);
-            $table->string('neighborhood', 50);
-            $table->string('address', 100);
-            $table->string('additional_info', 100)->nullable();
-            $table->timestamps();
-        });
-    }
+    public function up()
+{
+    Schema::create('localities', function (Blueprint $table) {
+        $table->id();
+        $table->string('country');
+        $table->string('state');
+        $table->string('city');
+        $table->string('neighborhood');
+        $table->string('address');
+        $table->timestamps();
+        //$table->dropColumn(['country', 'city']); // Elimina columnas antiguas si es necesario
+    });
+}
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('localities');
-    }
+public function down(): void
+{
+    Schema::dropIfExists('localities');
+    Schema::table('localities', function (Blueprint $table) {
+        $table->dropColumn(['country', 'state', 'city']);
+        $table->string('country')->nullable();
+        $table->string('city')->nullable();
+    });
+}
 };

@@ -28,7 +28,7 @@
                 <option value="">Seleccione un Estudiante</option>
                 @foreach($students as $student)
                     <option value="{{ $student->id }}" {{ $student->id == $convocationRelation->student_id ? 'selected' : '' }}>
-                        {{ $student->id }}
+                        {{ $student->identity_number }}
                     </option>
                 @endforeach
             </select>

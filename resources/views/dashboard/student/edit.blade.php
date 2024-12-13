@@ -4,7 +4,18 @@
             {{ __('Editar Estudiante') }}
         </h2>
     </x-slot>
-    <div class="container">
+    <div class="container mt-5">
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('student.update', $student->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -30,8 +41,15 @@
         </div>
 
         <div class="form-group mb-3">
-            <label for="identity_id">ID Identidad</label>
-            <input type="number" name="identity_id" class="form-control" value="{{ old('identity_id', $student->identity_id) }}" required>
+            <label for="identity_id">Identidad</label>
+            <select name="identity_id" class="form-control" required>
+                <option value="">Seleccione una Identidad</option>
+                @foreach($identities as $identity)
+                    <option value="{{ $identity->id }}" {{ old('identity_id', $student->identity_id) == $identity->id ? 'selected' : '' }}>
+                        {{ $identity->identity_type }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group mb-3">
@@ -50,30 +68,60 @@
         </div>
 
         <div class="form-group mb-3">
-            <label for="phone_number">Numero de Celular</label>
+            <label for="phone_number">Numero Celular</label>
             <input type="text" name="phone_number" class="form-control" value="{{ old('phone_number', $student->phone_number) }}">
         </div>
 
         <div class="form-group mb-3">
-            <label for="locality_id">ID Localidad</label>
-            <input type="number" name="locality_id" class="form-control" value="{{ old('locality_id', $student->locality_id) }}" required>
+            <label for="locality_id">Localidad</label>
+            <select name="locality_id" class="form-control" required>
+                <option value="">Seleccione una Localidad</option>
+                @foreach($localities as $locality)
+                    <option value="{{ $locality->id }}" {{ old('locality_id', $student->locality_id) == $locality->id ? 'selected' : '' }}>
+                        {{ $locality->id }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group mb-3">
-            <label for="program_id">ID Programa</label>
-            <input type="number" name="program_id" class="form-control" value="{{ old('program_id', $student->program_id) }}" required>
+            <label for="program_id">Programa</label>
+            <select name="program_id" class="form-control" required>
+                <option value="">Seleccione un Programa</option>
+                @foreach($programs as $program)
+                    <option value="{{ $program->id }}" {{ old('program_id', $student->program_id) == $program->id ? 'selected' : '' }}>
+                        {{ $program->program_name }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group mb-3">
-            <label for="file_id">ID Archivos</label>
-            <input type="number" name="file_id" class="form-control" value="{{ old('file_id', $student->file_id) }}" required>
+            <label for="file_id">Archivo</label>
+            <select name="file_id" class="form-control" required>
+                <option value="">Seleccione un Archivo</option>
+                @foreach($files as $file)
+                    <option value="{{ $file->id }}" {{ old('file_id', $student->file_id) == $file->id ? 'selected' : '' }}>
+                        {{ $file->id }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group mb-3">
-            <label for="status">Estado</label>
-            <select name="status" class="form-control" required>
-                <option value="1" {{ old('status', $student->status) == 1 ? 'selected' : '' }}>Activo</option>
-                <option value="0" {{ old('status', $student->status) == 0 ? 'selected' : '' }}>Inactivo</option>
+            <label for="quialification">Calificacion</label>
+            <input type="text" name="quialification" class="form-control" value="{{ old('quialification', $student->quialification) }}">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="status">Nivel de Idioma Primario</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Activo" {{ $student->status == 'Activo' ? 'selected' : '' }}>Activo</option>
+                <option value="Inactivo" {{ $student->status == 'Inactivo' ? 'selected' : '' }}>Inactivo</option>
+                <option value="Finalizó" {{ $student->status == 'Finalizó' ? 'selected' : '' }}>Finalizó</option>
+                <option value="En proceso" {{ $student->status == 'En proceso' ? 'selected' : '' }}>En proceso</option>
+                <option value="Se retiró" {{ $student->status == 'Se retiró' ? 'selected' : '' }}>Se retiró</option>
+                <option value="Reprobó" {{ $student->status == 'Reprobó' ? 'selected' : '' }}>Reprobó</option>
             </select>
         </div>
 

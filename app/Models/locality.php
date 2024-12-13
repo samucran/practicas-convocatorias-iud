@@ -17,6 +17,5 @@ class locality extends Model
         'city',
         'neighborhood',
         'address',
-        'additional_info',
     ];
 }

@@ -22,6 +22,7 @@ class student extends Model
         'locality_id',
         'program_id',
         'file_id',
+        'quialification',
         'status',
     ];
 

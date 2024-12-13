@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('identity_document')->nullable(false); // Documento de identidad
             $table->string('health_certificate')->nullable(false); // Certificado de salud
-            $table->string('institutional_resume')->nullable(false); // Hoja de vida institucional
             $table->timestamps();
         });
     }

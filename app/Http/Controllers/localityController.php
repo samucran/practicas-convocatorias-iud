@@ -26,19 +26,13 @@ class localityController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'country' => 'required|string|max:20',
-            'state' => 'required|string|max:20',
-            'city' => 'required|string|max:20',
+            'country' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
             'neighborhood' => 'required|string|max:50',
-            'address' => 'required|string|max:100',
-            'additional_info' => 'nullable|string|max:100',], 
-            [
-            'country.required' => 'El nombre del país es obligatorio.',
-            'state.required' => 'El nombre del departamento es obligatorio.',
-            'city.required' => 'El municipio es obligatorio.',
-            'neighborhood.required' => 'El barrio es obligatorio.',
-            'address.required' => 'La direccion es obligatoria.',
-        ]);
+            'address' => 'required|string|max:100',],
+             
+            []);
 
         try {
             locality::create($validated);
@@ -65,19 +59,12 @@ class localityController extends Controller
     public function update(Request $request, locality $locality)
     {
         $request->validate([
-            'country' => 'required|string|max:20',
-            'state' => 'required|string|max:20',
-            'city' => 'required|string|max:20',
+            'country' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
             'neighborhood' => 'required|string|max:50',
-            'address' => 'required|string|max:100',
-            'additional_info' => 'nullable|string|max:100',], 
-            [
-            'country.required' => 'El nombre del país es obligatorio.',
-            'state.required' => 'El nombre del departamento es obligatorio.',
-            'city.required' => 'El municipio es obligatorio.',
-            'neighborhood.required' => 'El barrio es obligatorio.',
-            'address.required' => 'La direccion es obligatoria.',
-        ]);
+            'address' => 'required|string|max:100',], 
+            []);
 
         try {
             $locality::update($request->all());
